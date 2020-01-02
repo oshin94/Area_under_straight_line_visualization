@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<div style="text-align:center">
+			<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+			<script src="{{url_for('static', filename='visual.js')}}"></script>
+			<div>
+				Slope: <input type="text" id="slope">
+				<br>
+				y-intercept: <input type="text" id="intercept">
+				<br>
+				<button onclick="Line()">Draw line</button>
+				<div id = "mydiv" style="display:none">
+					X1: <input type="text" id="x1" >
+					<br>
+					X2: <input type="text" id="x2">
+					<br>
+					<button onclick="Area()">Find Area</button>
+				</div>
+				<div>
+					<p id= "ar" style="display:none"></p>
+				</div>
+			</div>
+		</div>
+	</head>
+	
+	<body>
+	</body>
+</html>
