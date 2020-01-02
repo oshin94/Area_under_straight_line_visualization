@@ -62,14 +62,23 @@ function Line(){
 	
 	/* y1 = m*x1+c;
 	y2 = m*x2+c; */
-	lx1 = (-300-c)/m
-	lx2 = (300-c)/m
+	if (m == 0){
+		lgy1 = 250-c;
+		lgy2 = 250-c;
+		
+		lgx1 = 0;
+		lgx2 = 500;
+	}
+	else{
+		lgy1 = 250+300;
+		lgy2 = 250-300;
 	
-	lgx1 = 250+lx1;
-	lgx2 = 250+lx2;
-	
-	lgy1 = 250+300;
-	lgy2 = 250-300;
+		lx1 = (-300-c)/m;
+		lx2 = (300-c)/m;
+		
+		lgx1 = 250+lx1;
+		lgx2 = 250+lx2;
+	}
 	
 	/* console.log(lgx1, lgy1);
 	console.log(lgx2, lgy2); */
