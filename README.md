@@ -3,7 +3,6 @@ visualize area under a straight line
 Made using Javascript, HTML, Python-Flask
 
 Required Changes:
-  when slope=0
-  when slope extremely high
+  when line parallel to y-axis
 Others:  
   find out other bugs
