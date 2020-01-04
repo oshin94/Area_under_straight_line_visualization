@@ -17,7 +17,7 @@ ctx.fillStyle="black";
 for (var j=0; j<500; j+=5){
 	ctx.beginPath();
 		ctx.strokeStyle="grey";
-		ctx.lineWidth = 0.2;
+		ctx.lineWidth = 0.4;
 		ctx.moveTo(j,0);
 		ctx.lineTo(j,500);
 		ctx.stroke();
@@ -53,6 +53,82 @@ for (var i=0; i<500; i+=25){
 		ctx.fillText(250-i,258,i);
 	ctx.closePath();
 }
+
+function Clear(){
+	ctx.fillStyle="white";
+		ctx.beginPath();
+		ctx.strokeStyle = 'white';
+		ctx.moveTo(0, 0);
+		ctx.lineTo(0, 500);
+		ctx.lineTo(500, 500);
+		ctx.lineTo(500, 0);
+		ctx.stroke();
+		ctx.closePath();
+	ctx.fill();
+
+	ctx.beginPath();
+		ctx.strokeStyle="blue";
+		ctx.moveTo(0,250);
+		ctx.lineTo(500,250);
+		ctx.stroke();
+
+		ctx.moveTo(250,0);
+		ctx.lineTo(250,500);
+		ctx.stroke();
+	ctx.closePath();
+
+	ctx.fillStyle="black";
+	for (var j=0; j<500; j+=5){
+		ctx.beginPath();
+			ctx.strokeStyle="grey";
+			ctx.lineWidth = 0.4;
+			ctx.moveTo(j,0);
+			ctx.lineTo(j,500);
+			ctx.stroke();
+		ctx.closePath();
+		
+		ctx.beginPath();
+			ctx.strokeStyle="grey";
+			ctx.lineWidth = 0.4;
+			ctx.moveTo(0,j);
+			ctx.lineTo(500,j);
+			ctx.stroke();
+		ctx.closePath();
+	}
+	for (var i=0; i<500; i+=25){
+		ctx.beginPath();
+			ctx.strokeStyle="black";
+			ctx.lineWidth = 2;
+			ctx.moveTo(i,245);
+			ctx.lineTo(i,255);
+			ctx.stroke();
+			
+			ctx.font = "10px Calibri";
+			ctx.fillText(-250+i,i,246);
+
+			ctx.moveTo(245,i);
+			ctx.lineTo(255,i);
+			ctx.stroke();
+		
+		
+			ctx.font = "10px Calibri";
+			ctx.fillText(250-i,258,i);
+		ctx.closePath();
+	}
+	var y = document.getElementById("another");
+	y.style.display="none";
+	var y = document.getElementById("mydiv");
+	x1.value = '';
+	x2.value = '';
+	slope.value = '';
+	intercept.value = '';
+	y.style.display="none";
+	slope.disabled = false;
+	intercept.disabled = true;
+	drawButton.disabled = true;
+	
+}
+
 
 function Line(){
 	var m = parseInt(document.getElementById("slope").value);
@@ -92,6 +168,11 @@ function Line(){
 	
 	var x = document.getElementById("mydiv");
 	x.style.display = "block";
+	
+	slope.disabled = true;
+	intercept.disabled= true;
+	drawButton.disabled= true;
+	findArea.disabled = false;
 }
 
 function Area(){
@@ -141,5 +222,12 @@ function Area(){
 	var y = document.getElementById("ar");
 	y.style.display="block";
 	y.innerHTML = "The area is: "+ar;
-	
+	var y = document.getElementById("findAnother");
+	y.style.display="block";
+	var y = document.getElementById("another");
+	y.style.display="block";
+	x1.disabled = true;
+	x2.disabled = true;
+	findArea.disabled = true;
 }
+

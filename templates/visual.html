@@ -4,20 +4,21 @@
 			<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
 			<script src="{{url_for('static', filename='visual.js')}}"></script>
 			<div>
-				Slope: <input type="text" id="slope">
+				Slope: <input type="text" id="slope" onkeyup="if(this.textLength != 0) {intercept.disabled = false} else {intercept.disabled = true}">
 				<br>
-				y-intercept: <input type="text" id="intercept">
+				y-intercept: <input type="text" id="intercept" disabled="disabled" onkeyup="if(this.textLength != 0) {drawButton.disabled = false} else {drawButton.disabled = true}">
 				<br>
-				<button onclick="Line()">Draw line</button>
+				<button onclick="Line()" id="drawButton" disabled="disabled">Draw line</button>
 				<div id = "mydiv" style="display:none">
-					X1: <input type="text" id="x1" >
+					X1: <input type="text" id="x1">
 					<br>
 					X2: <input type="text" id="x2">
 					<br>
-					<button onclick="Area()">Find Area</button>
+					<button onclick="Area()" id="findArea" disabled="disabled">Find Area</button>
 				</div>
-				<div>
+				<div id="another">
 					<p id= "ar" style="display:none"></p>
+					<button onclick="Clear()" id="findAnother" style="display:none;">Find another Area</button>
 				</div>
 			</div>
 		</div>
