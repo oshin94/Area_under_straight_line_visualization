@@ -6,3 +6,5 @@ Required Changes:
   when line parallel to y-axis
 Others:  
   find out other bugs
+
+live Demo: https://sites.google.com/view/areaunderastraightline/home
